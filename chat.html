@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!--自适应屏幕大小-->
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<meta name="description" content="Sean Zhang ChatGPT API"/>
+<head>
+    <meta charset="UTF-8">
+    <title>OpenAI</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+<div align="center">
+    <div class="chat_window">
+        <div class="top_menu">
+            <div class="buttons">
+                <div class="button close"></div>
+                <div class="button minimize"></div>
+                <div class="button maximize"></div>
+            </div>
+            <div class="title">ChatGPT API</div>
+        </div>
+        <div id="loading" style="display:none; color:red"><b>Waiting....</b></div>
+        <ul class="messages">
+            <div style="text-align: left; color: green">
+                <pre style="white-space: pre-wrap; word-wrap:break-word" id="chatlog"></pre>
+            </div>
+        </ul>
+        <div class="bottom_wrapper clearfix">
+            <textarea class="message_input_wrapper" placeholder="Click here to enter the question, press Enter to submit, press Shift+Enter to wrap" id="chatinput"></textarea>
+            <button class="send_message" id="sendbutton">submit</button>
+        </div>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
